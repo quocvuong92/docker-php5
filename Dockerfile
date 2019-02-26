@@ -15,7 +15,7 @@ ENV TZ 'Asia/Ho_Chi_Minh'
 
 ENV PHP_RUN_DIR=/run/php \
     PHP_LOG_DIR=/var/log/php \
-    PHP_CONF_DIR=/etc/php/5.5 \
+    PHP_CONF_DIR=/etc/php/5.6 \
     PHP_DATA_DIR=/var/lib/php
 
 # Setup timezone & install libraries
@@ -28,15 +28,15 @@ RUN echo $TZ > /etc/timezone && rm -rf /etc/localtime &&  ln -snf /usr/share/zon
 	&& apt-get update \
 	# Install softwares
 	&& apt-get install -y curl wget vim nginx net-tools build-essential python-pip supervisor \
-	# Install php 5.5
-	&& apt-get install -y php5.5-fpm php5.5-cli php5.5-intl \
-	   php5.5-zip php5.5-mbstring php5.5-xml php5.5-json php5.5-curl \
-	   php5.5-mcrypt php5.5-gd php5.5-pgsql php5.5-mysql php-pear \
-	   php5.5-geoip php5.5-redis php5.5-sqlite php5.5-xml php5.5-xmlrpc \
-	   php5.5-xdebug php5.5-mongo php5.5-mysql php5.5-pgsql \
-    	   php5.5-memcached php5.5-memcache php5.5-dev\
+	# Install php 5.6
+	&& apt-get install -y php5.6-fpm php5.6-cli php5.6-intl \
+	   php5.6-zip php5.6-mbstring php5.6-xml php5.6-json php5.6-curl \
+	   php5.6-mcrypt php5.6-gd php5.6-pgsql php5.6-mysql php-pear \
+	   php5.6-geoip php5.6-redis php5.6-sqlite php5.6-xml php5.6-xmlrpc \
+	   php5.6-xdebug php5.6-mongo php5.6-mysql php5.6-pgsql \
+    	   php5.6-memcached php5.6-memcache php5.6-dev\
         # Advanced sofwares
-	#	   php5.5-dev php-pear phpunit zlib1g-dev file swig python2.7 python-dev python-pip \
+	#	   php5.6-dev php-pear phpunit zlib1g-dev file swig python2.7 python-dev python-pip \
 	#        && pecl install grpc-1.12.0 \
         && phpenmod mcrypt \
     # Install composer
